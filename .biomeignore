@@ -1,0 +1,8 @@
+node_modules
+build
+dist
+.cache
+*.min.js
+app/app.css
+app/styles/globals.css
+worker-configuration.d.ts
