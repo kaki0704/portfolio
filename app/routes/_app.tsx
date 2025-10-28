@@ -34,16 +34,12 @@ export default function AppLayout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="mb-4">Yuki Yamada</h3>
-              <p className="text-muted-foreground mb-4">
-                ビジネスを加速させる、境界を越えるエンジニアリング
-              </p>
+              <h3 className="mb-4">Yamada Yuki</h3>
               <p className="text-muted-foreground text-sm">
                 © 2024 Yuki Yamada. All rights reserved.
               </p>
             </div>
             <div>
-              <h4 className="mb-4">ナビゲーション</h4>
               <ul className="space-y-2">
                 {[
                   { id: "about", label: "About" },
@@ -64,7 +60,6 @@ export default function AppLayout() {
               </ul>
             </div>
             <div>
-              <h4 className="mb-4">連絡先</h4>
               <ul className="space-y-2">
                 <li>
                   <a

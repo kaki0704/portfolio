@@ -4,7 +4,7 @@ import { Home } from "../components/Home";
 export const meta: MetaFunction = () => {
   return [
     { title: "Yuki Yamada - Portfolio" },
-    { name: "description", content: "ビジネスを加速させる、境界を越えるエンジニアリング" },
+    { name: "description", content: "Yamada Yuki's Portofolio" },
   ];
 };
 export default function AppIndex() {

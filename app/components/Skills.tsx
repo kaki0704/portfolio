@@ -67,9 +67,6 @@ export function Skills() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fadeIn">
           <h1 className="mb-6">Skills</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            これまでの経験で身につけた技術スキルとソフトスキルをレベル別にご紹介します。
-          </p>
         </div>
 
         <div className="space-y-12 mb-16">

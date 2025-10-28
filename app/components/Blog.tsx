@@ -41,9 +41,6 @@ export function Blog() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 animate-fadeIn">
           <h1 className="mb-4">Blog</h1>
-          <p className="text-muted-foreground">
-            技術的な知見や開発で得た学び、エンジニアリングマネジメントについての考察を発信しています。
-          </p>
         </div>
 
         <div className="space-y-8">

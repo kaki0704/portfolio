@@ -8,12 +8,9 @@ export function Home({ onNavigate }: HomeProps) {
     <div className="min-h-screen flex flex-col">
       <div className="flex-1 flex items-center justify-center relative">
         <div className="text-center px-4 max-w-4xl mx-auto animate-fadeIn">
-          <h1 className="mb-6">Yuki Yamada</h1>
+          <h1 className="mb-6">Hi, I'm Yamada Yuki 🐢</h1>
           <div className="mb-8">
             <h2 className="text-muted-foreground mb-4">Software Engineer, Engineering Manager</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              ビジネスを加速させる、境界を越えるエンジニアリング
-            </p>
           </div>
           <div className="flex justify-center space-x-6 mb-12">
             <a

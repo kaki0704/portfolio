@@ -25,9 +25,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           <button
             type="button"
             onClick={() => handleNavClick("home")}
-            className="font-medium text-foreground hover:text-primary transition-colors"
+            className="font-medium text-foreground hover:text-primary transition-colors cursor-pointer"
           >
-            Yuki Yamada
+            yamady
           </button>
 
           <div className="hidden md:flex space-x-8">
@@ -36,7 +36,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 type="button"
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`transition-colors hover:text-primary ${
+                className={`transition-colors hover:text-primary cursor-pointer ${
                   currentPage === item.id ? "text-primary" : "text-foreground"
                 }`}
               >
@@ -48,7 +48,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-foreground hover:text-primary transition-colors cursor-pointer"
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -62,7 +62,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   type="button"
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`block w-full text-left px-3 py-2 transition-colors hover:text-primary ${
+                  className={`block w-full text-left px-3 py-2 transition-colors hover:text-primary cursor-pointer ${
                     currentPage === item.id ? "text-primary" : "text-foreground"
                   }`}
                 >

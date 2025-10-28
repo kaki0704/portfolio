@@ -116,9 +116,6 @@ export function Works() {
         </div>
 
         <div className="text-center mt-16 pt-16 border-t border-border animate-fadeIn">
-          <p className="text-muted-foreground mb-4">
-            その他の実績やプロジェクトの詳細については、お気軽にお問い合わせください。
-          </p>
           <a
             href="mailto:yuki.yamada@example.com"
             className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors"
