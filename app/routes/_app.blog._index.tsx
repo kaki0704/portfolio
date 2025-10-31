@@ -1,6 +1,6 @@
 import type { LoaderFunctionArgs, MetaFunction } from "react-router";
-import { Blog } from "../components/Blog";
 import { getBlogList } from "~/lib/microcms.server";
+import { Blog } from "../components/Blog";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,7 +9,7 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export async function loader({ request, context }: LoaderFunctionArgs) {
+export async function loader({ context }: LoaderFunctionArgs) {
   const env = context.cloudflare.env as Env;
   const { contents: posts } = await getBlogList(env, {
     orders: "-publishedAt",

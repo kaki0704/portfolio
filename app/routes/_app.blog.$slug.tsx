@@ -2,7 +2,6 @@ import { ArrowLeft, Calendar, User } from "lucide-react";
 import type { LoaderFunctionArgs, MetaFunction } from "react-router";
 import { useLoaderData, useNavigate } from "react-router";
 import { getBlogDetail, getBlogList } from "~/lib/microcms.server";
-import type { BlogPost } from "~/types/blog";
 
 export async function loader({ params, context }: LoaderFunctionArgs) {
   const slug = params.slug;
@@ -30,7 +29,7 @@ export async function loader({ params, context }: LoaderFunctionArgs) {
     console.error("Blog detail error:", error);
     throw new Response(
       `Blog post not found: ${error instanceof Error ? error.message : "Unknown error"}`,
-      { status: 404 }
+      { status: 404 },
     );
   }
 }
@@ -176,9 +175,9 @@ export default function BlogPostDetail() {
                       {relatedPost.content.replace(/<[^>]*>/g, "").substring(0, 100)}...
                     </p>
                     <time className="text-xs text-muted-foreground">
-                      {new Date(relatedPost.publishedAt || relatedPost.createdAt).toLocaleDateString(
-                        "ja-JP"
-                      )}
+                      {new Date(
+                        relatedPost.publishedAt || relatedPost.createdAt,
+                      ).toLocaleDateString("ja-JP")}
                     </time>
                   </div>
                 </article>

@@ -49,7 +49,9 @@ export function Blog() {
                       {post.category && (
                         <>
                           <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
-                          <span className="caption text-muted-foreground">{post.category.name}</span>
+                          <span className="caption text-muted-foreground">
+                            {post.category.name}
+                          </span>
                         </>
                       )}
                     </div>

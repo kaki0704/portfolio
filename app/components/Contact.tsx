@@ -1,10 +1,10 @@
+import { useId } from "react";
 import GithubFillIcon from "remixicon-react/GithubFillIcon";
 import LinkedinBoxFillIcon from "remixicon-react/LinkedinBoxFillIcon";
 import MailFillIcon from "remixicon-react/MailFillIcon";
 import MapPinFillIcon from "remixicon-react/MapPinFillIcon";
 import PhoneFillIcon from "remixicon-react/PhoneFillIcon";
 import TwitterFillIcon from "remixicon-react/TwitterFillIcon";
-import { useId } from "react";
 export function Contact() {
   const formIdPrefix = useId();
   const firstNameId = `${formIdPrefix}-firstName`;

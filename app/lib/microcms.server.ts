@@ -19,7 +19,7 @@ async function fetchMicroCMS<T>(
   env: Env,
   endpoint: string,
   contentId?: string,
-  queries?: MicroCMSQueries
+  queries?: MicroCMSQueries,
 ): Promise<T> {
   if (!env.MICROCMS_SERVICE_DOMAIN) {
     throw new Error("MICROCMS_SERVICE_DOMAIN is required");
@@ -58,9 +58,7 @@ async function fetchMicroCMS<T>(
       statusText: response.statusText,
       error: errorText,
     });
-    throw new Error(
-      `MicroCMS API Error: ${response.status} ${response.statusText} - ${errorText}`
-    );
+    throw new Error(`MicroCMS API Error: ${response.status} ${response.statusText} - ${errorText}`);
   }
 
   return response.json();
@@ -71,14 +69,9 @@ async function fetchMicroCMS<T>(
  */
 export const getBlogList = async (
   env: Env,
-  queries?: MicroCMSQueries
+  queries?: MicroCMSQueries,
 ): Promise<MicroCMSListResponse<BlogPost>> => {
-  return await fetchMicroCMS<MicroCMSListResponse<BlogPost>>(
-    env,
-    "blogs",
-    undefined,
-    queries
-  );
+  return await fetchMicroCMS<MicroCMSListResponse<BlogPost>>(env, "blogs", undefined, queries);
 };
 
 /**
@@ -87,7 +80,7 @@ export const getBlogList = async (
 export const getBlogDetail = async (
   env: Env,
   contentId: string,
-  queries?: MicroCMSQueries
+  queries?: MicroCMSQueries,
 ): Promise<BlogPost> => {
   return await fetchMicroCMS<BlogPost>(env, "blogs", contentId, queries);
 };
