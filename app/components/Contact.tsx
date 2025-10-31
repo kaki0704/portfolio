@@ -1,4 +1,9 @@
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import GithubFillIcon from "remixicon-react/GithubFillIcon";
+import LinkedinBoxFillIcon from "remixicon-react/LinkedinBoxFillIcon";
+import MailFillIcon from "remixicon-react/MailFillIcon";
+import MapPinFillIcon from "remixicon-react/MapPinFillIcon";
+import PhoneFillIcon from "remixicon-react/PhoneFillIcon";
+import TwitterFillIcon from "remixicon-react/TwitterFillIcon";
 import { useId } from "react";
 export function Contact() {
   const formIdPrefix = useId();
@@ -9,21 +14,21 @@ export function Contact() {
   const messageId = `${formIdPrefix}-message`;
   const contactMethods = [
     {
-      icon: Mail,
+      icon: MailFillIcon,
       label: "Email",
       value: "yuki.yamada@example.com",
       href: "mailto:yuki.yamada@example.com",
       primary: true,
     },
     {
-      icon: Phone,
+      icon: PhoneFillIcon,
       label: "電話",
       value: "+81-90-XXXX-XXXX",
       href: "tel:+819012345678",
       primary: false,
     },
     {
-      icon: MapPin,
+      icon: MapPinFillIcon,
       label: "所在地",
       value: "東京, 日本",
       href: null,
@@ -32,19 +37,19 @@ export function Contact() {
   ];
   const socialLinks = [
     {
-      icon: Github,
+      icon: GithubFillIcon,
       label: "GitHub",
       href: "https://github.com",
       color: "hover:text-foreground",
     },
     {
-      icon: Linkedin,
+      icon: LinkedinBoxFillIcon,
       label: "LinkedIn",
       href: "https://example.com",
       color: "hover:text-blue-400",
     },
     {
-      icon: Twitter,
+      icon: TwitterFillIcon,
       label: "Twitter",
       href: "https://example.com",
       color: "hover:text-blue-400",

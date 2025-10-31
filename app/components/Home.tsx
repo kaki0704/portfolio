@@ -1,4 +1,6 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import GithubFillIcon from "remixicon-react/GithubFillIcon";
+import LinkedinBoxFillIcon from "remixicon-react/LinkedinBoxFillIcon";
+import MailFillIcon from "remixicon-react/MailFillIcon";
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -14,12 +16,12 @@ export function Home({ onNavigate }: HomeProps) {
           </div>
           <div className="flex justify-center space-x-6 mb-12">
             <a
-              href="https://github.com"
+              href="https://github.com/kaki0704"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-muted-foreground hover:text-primary transition-colors"
             >
-              <Github size={24} />
+              <GithubFillIcon size={24} />
             </a>
             <a
               href="https://linkedin.com"
@@ -27,13 +29,13 @@ export function Home({ onNavigate }: HomeProps) {
               rel="noopener noreferrer"
               className="p-3 text-muted-foreground hover:text-primary transition-colors"
             >
-              <Linkedin size={24} />
+              <LinkedinBoxFillIcon size={24} />
             </a>
             <a
               href="mailto:yuki@example.com"
               className="p-3 text-muted-foreground hover:text-primary transition-colors"
             >
-              <Mail size={24} />
+              <MailFillIcon size={24} />
             </a>
           </div>
           <div className="space-x-4">

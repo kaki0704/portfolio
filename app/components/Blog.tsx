@@ -1,33 +1,15 @@
 import { ArrowUpRight } from "lucide-react";
-import { useNavigate } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
+import type { BlogPost } from "~/types/blog";
+
+export interface BlogLoaderData {
+  posts: BlogPost[];
+}
+
 export function Blog() {
   const navigate = useNavigate();
-  const blogPosts = [
-    {
-      id: "nextjs-app-router-introduction",
-      title: "Next.js App Routerの実装パターンと最適化テクニック",
-      description:
-        "Next.js 13で導入されたApp Routerの実践的な使用方法と、パフォーマンス最適化のベストプラクティスを解説します。",
-      date: "2024-01-15",
-      category: "Frontend",
-    },
-    {
-      id: "microservices-design-patterns",
-      title: "マイクロサービス設計パターンの実践ガイド",
-      description:
-        "実際のプロジェクトで活用できるマイクロサービスの設計パターンと、その実装における注意点を詳しく解説します。",
-      date: "2024-01-10",
-      category: "Architecture",
-    },
-    {
-      id: "team-productivity-improvement",
-      title: "チーム生産性を2倍にした開発プロセス改革",
-      description:
-        "実際のチームで実践した、開発プロセスの改善施策とその成果について詳しく解説します。",
-      date: "2024-01-05",
-      category: "Management",
-    },
-  ];
+  const { posts } = useLoaderData<BlogLoaderData>();
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("ja-JP", {
@@ -35,6 +17,13 @@ export function Blog() {
       month: "short",
       day: "numeric",
     });
+  };
+
+  const getExcerpt = (content: string) => {
+    // HTMLタグを除去してプレーンテキストに変換
+    const plainText = content.replace(/<[^>]*>/g, "");
+    // 最初の150文字を取得
+    return plainText.substring(0, 150) + (plainText.length > 150 ? "..." : "");
   };
   return (
     <div className="pt-20 pb-16">
@@ -44,7 +33,7 @@ export function Blog() {
         </div>
 
         <div className="space-y-8">
-          {blogPosts.map((post) => (
+          {posts.map((post) => (
             <article key={post.id} className="group animate-fadeIn">
               <button
                 type="button"
@@ -55,15 +44,19 @@ export function Blog() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-2">
                       <time className="caption text-muted-foreground flex-shrink-0">
-                        {formatDate(post.date)}
+                        {formatDate(post.publishedAt || post.createdAt)}
                       </time>
-                      <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
-                      <span className="caption text-muted-foreground">{post.category}</span>
+                      {post.category && (
+                        <>
+                          <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
+                          <span className="caption text-muted-foreground">{post.category.name}</span>
+                        </>
+                      )}
                     </div>
                     <h2 className="mb-3 group-hover:text-primary transition-colors">
                       {post.title}
                     </h2>
-                    <p className="text-muted-foreground line-clamp-2">{post.description}</p>
+                    <p className="text-muted-foreground line-clamp-2">{getExcerpt(post.content)}</p>
                   </div>
                   <ArrowUpRight
                     className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1"

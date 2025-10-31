@@ -1,4 +1,5 @@
-import { ExternalLink, Folder, Github } from "lucide-react";
+import { ExternalLink, Folder } from "lucide-react";
+import GithubFillIcon from "remixicon-react/GithubFillIcon";
 export function Works() {
   const projects = [
     {
@@ -81,7 +82,7 @@ export function Works() {
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Github size={20} />
+                      <GithubFillIcon size={20} />
                     </a>
                     {project.demo && (
                       <a

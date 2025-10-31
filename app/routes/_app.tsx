@@ -71,7 +71,7 @@ export default function AppLayout() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/kaki0704"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
