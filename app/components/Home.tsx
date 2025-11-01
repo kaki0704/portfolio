@@ -42,14 +42,14 @@ export function Home({ onNavigate }: HomeProps) {
             <button
               type="button"
               onClick={() => onNavigate("about")}
-              className="bg-primary text-primary-foreground px-6 py-3 rounded-button hover:opacity-90 transition-opacity"
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-button hover:opacity-90 transition-opacity cursor-pointer"
             >
               About Me
             </button>
             <button
               type="button"
               onClick={() => onNavigate("works")}
-              className="border border-border px-6 py-3 rounded-button hover:bg-muted transition-colors"
+              className="border border-border px-6 py-3 rounded-button hover:bg-muted transition-colors cursor-pointer"
             >
               View Works
             </button>

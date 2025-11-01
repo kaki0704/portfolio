@@ -122,28 +122,6 @@ export function Skills() {
             ))}
           </div>
         </div>
-
-        <div className="text-center mt-16 pt-16 border-t border-border animate-fadeIn">
-          <h3 className="mb-4">継続的な学習</h3>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-            技術の進歩に遅れることなく、常に新しい技術やベストプラクティスの学習を心がけています。
-            学んだ知識はチームや組織に還元し、共に成長していくことを重視しています。
-          </p>
-          <div className="flex justify-center space-x-8 text-center">
-            <div>
-              <div className="stat-value text-primary mb-1">365</div>
-              <p className="caption text-muted-foreground">Days Learning</p>
-            </div>
-            <div>
-              <div className="stat-value text-primary mb-1">12</div>
-              <p className="caption text-muted-foreground">Certifications</p>
-            </div>
-            <div>
-              <div className="stat-value text-primary mb-1">50+</div>
-              <p className="caption text-muted-foreground">Tech Articles Read</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

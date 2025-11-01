@@ -58,7 +58,7 @@ export default function BlogPostDetail() {
         <button
           type="button"
           onClick={() => navigate("/blog")}
-          className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors mb-8"
+          className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors mb-8 cursor-pointer"
         >
           <ArrowLeft size={20} />
           <span>Back to Blog</span>

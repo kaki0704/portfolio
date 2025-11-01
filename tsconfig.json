@@ -7,11 +7,6 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
-    "types": ["./worker-configuration.d.ts"],
-    "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./app/*"]
-    }
+    "types": ["./worker-configuration.d.ts"]
   }
 }

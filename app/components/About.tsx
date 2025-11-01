@@ -115,7 +115,7 @@ export function About() {
                   type="button"
                   key={exp.id}
                   onClick={() => setSelectedCompany(index)}
-                  className={`px-4 py-3 text-left rounded-lg transition-all duration-200 flex-shrink-0 lg:w-full ${
+                  className={`px-4 py-3 text-left rounded-lg transition-all duration-200 flex-shrink-0 lg:w-full cursor-pointer ${
                     selectedCompany === index
                       ? "bg-muted text-primary border-l-2 border-primary"
                       : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"

@@ -51,7 +51,7 @@ export default function AppLayout() {
                     <button
                       type="button"
                       onClick={() => handleNavigate(item.id)}
-                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm cursor-pointer"
                     >
                       {item.label}
                     </button>

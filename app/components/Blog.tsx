@@ -20,9 +20,7 @@ export function Blog() {
   };
 
   const getExcerpt = (content: string) => {
-    // HTMLタグを除去してプレーンテキストに変換
     const plainText = content.replace(/<[^>]*>/g, "");
-    // 最初の150文字を取得
     return plainText.substring(0, 150) + (plainText.length > 150 ? "..." : "");
   };
   return (
@@ -38,7 +36,7 @@ export function Blog() {
               <button
                 type="button"
                 onClick={() => navigate(`/blog/${post.id}`)}
-                className="block w-full text-left border-b border-border pb-8 transition-colors hover:border-primary/30"
+                className="block w-full text-left border-b border-border pb-8 transition-colors hover:border-primary/30 cursor-pointer"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
@@ -68,17 +66,6 @@ export function Blog() {
               </button>
             </article>
           ))}
-        </div>
-
-        <div className="text-center mt-16 pt-16 border-t border-border animate-fadeIn">
-          <p className="text-muted-foreground mb-4">技術ブログは継続的に更新していく予定です。</p>
-          <a
-            href="mailto:yuki.yamada@example.com"
-            className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors"
-          >
-            <span>お問い合わせ</span>
-            <ArrowUpRight size={16} />
-          </a>
         </div>
       </div>
     </div>
