@@ -24,17 +24,18 @@ jobs:
           node-version: '22'
           cache: 'pnpm'
 
+      - name: Create .dev.vars for type generation
+        run: |
+          cat > .dev.vars << EOF
+          MICROCMS_SERVICE_DOMAIN=${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY=${{ secrets.MICROCMS_API_KEY }}
+          EOF
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        env:
-          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
-          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
 
       - name: Run Biome check
         run: pnpm run lint
 
       - name: Run TypeScript type check
         run: pnpm run typecheck
-        env:
-          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
-          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
