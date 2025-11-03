@@ -26,19 +26,17 @@ export function Skills() {
         { name: "GCP", level: 65 },
         { name: "MySQL", level: 75 },
         { name: "Terraform", level: 70 },
-      ],
-    },
-    {
-      title: "Learning (Lv.1)",
-      description: "学習中または軽い実装経験があるレベル",
-      skills: [
-        { name: "Python", level: 60 },
         { name: "Docker", level: 65 },
         { name: "Playwright", level: 55 },
         { name: "Cypress", level: 70 },
         { name: "GitHub Actions", level: 75 },
         { name: "Sentry", level: 60 },
       ],
+    },
+    {
+      title: "Learning (Lv.1)",
+      description: "学習中または軽い実装経験があるレベル",
+      skills: [{ name: "Python", level: 60 }],
     },
   ];
   const softSkills = [
