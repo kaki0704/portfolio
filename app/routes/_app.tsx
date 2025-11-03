@@ -43,7 +43,6 @@ export default function AppLayout() {
               <ul className="space-y-2">
                 {[
                   { id: "about", label: "About" },
-                  { id: "works", label: "Works" },
                   { id: "skills", label: "Skills" },
                   { id: "blog", label: "Blog" },
                 ].map((item) => (

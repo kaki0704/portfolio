@@ -1,3 +1,4 @@
+import { SkillIcon } from "./SkillIcon";
 import { Progress } from "./ui/progress";
 export function Skills() {
   const skillCategories = [
@@ -5,38 +6,38 @@ export function Skills() {
       title: "Expert (Lv.3)",
       description: "業務で積極的に活用し、チームリード・技術選定ができるレベル",
       skills: [
-        { name: "Go", level: 90, icon: "🐹" },
-        { name: "TypeScript", level: 85, icon: "🔷" },
-        { name: "Vue.js", level: 90, icon: "💚" },
-        { name: "React", level: 85, icon: "⚛️" },
-        { name: "Nuxt.js", level: 88, icon: "💚" },
-        { name: "Git", level: 95, icon: "🔀" },
+        { name: "Go", level: 90 },
+        { name: "TypeScript", level: 85 },
+        { name: "Vue.js", level: 90 },
+        { name: "React", level: 85 },
+        { name: "Nuxt.js", level: 88 },
+        { name: "Git", level: 95 },
       ],
     },
     {
       title: "Proficient (Lv.2)",
       description: "業務で使用経験があり、設計・実装が可能なレベル",
       skills: [
-        { name: "Ruby on Rails", level: 75, icon: "🚂" },
-        { name: "Next.js", level: 80, icon: "▲" },
-        { name: "Remix", level: 75, icon: "🎵" },
-        { name: "React Native", level: 70, icon: "📱" },
-        { name: "AWS", level: 75, icon: "☁️" },
-        { name: "GCP", level: 65, icon: "☁️" },
-        { name: "MySQL", level: 75, icon: "🗄️" },
-        { name: "Terraform", level: 70, icon: "🏗️" },
+        { name: "Ruby on Rails", level: 75 },
+        { name: "Next.js", level: 80 },
+        { name: "Remix", level: 75 },
+        { name: "React Native", level: 70 },
+        { name: "AWS", level: 75 },
+        { name: "GCP", level: 65 },
+        { name: "MySQL", level: 75 },
+        { name: "Terraform", level: 70 },
       ],
     },
     {
       title: "Learning (Lv.1)",
       description: "学習中または軽い実装経験があるレベル",
       skills: [
-        { name: "Python", level: 60, icon: "🐍" },
-        { name: "Docker", level: 65, icon: "🐳" },
-        { name: "Playwright", level: 55, icon: "🎭" },
-        { name: "Cypress", level: 70, icon: "🌲" },
-        { name: "GitHub Actions", level: 75, icon: "⚙️" },
-        { name: "Sentry", level: 60, icon: "👁️" },
+        { name: "Python", level: 60 },
+        { name: "Docker", level: 65 },
+        { name: "Playwright", level: 55 },
+        { name: "Cypress", level: 70 },
+        { name: "GitHub Actions", level: 75 },
+        { name: "Sentry", level: 60 },
       ],
     },
   ];
@@ -83,7 +84,7 @@ export function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-3 animate-fadeIn">
                     <div className="flex items-center space-x-3">
-                      <span className="text-xl">{skill.icon}</span>
+                      <SkillIcon name={skill.name} size={24} />
                       <span className="font-medium">{skill.name}</span>
                     </div>
                     <div className="space-y-1">
