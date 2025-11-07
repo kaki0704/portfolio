@@ -2,10 +2,11 @@ import GithubFillIcon from "remixicon-react/GithubFillIcon";
 import LinkedinBoxFillIcon from "remixicon-react/LinkedinBoxFillIcon";
 import MailFillIcon from "remixicon-react/MailFillIcon";
 
-interface HomeProps {
+interface HeroProps {
   onNavigate: (page: string) => void;
 }
-export function Home({ onNavigate }: HomeProps) {
+
+export function Hero({ onNavigate }: HeroProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <div className="flex-1 flex items-center justify-center relative">

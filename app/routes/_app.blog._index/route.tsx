@@ -1,6 +1,6 @@
 import type { LoaderFunctionArgs, MetaFunction } from "react-router";
 import { getBlogList } from "~/lib/microcms.server";
-import { Blog } from "../components/Blog";
+import { BlogList } from "./BlogList";
 
 export const meta: MetaFunction = () => {
   return [
@@ -20,5 +20,5 @@ export async function loader({ context }: LoaderFunctionArgs) {
 }
 
 export default function BlogIndexRoute() {
-  return <Blog />;
+  return <BlogList />;
 }

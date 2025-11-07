@@ -1,6 +1,7 @@
 import { ExternalLink, Folder } from "lucide-react";
 import GithubFillIcon from "remixicon-react/GithubFillIcon";
-export function Works() {
+
+export function ProjectsGrid() {
   const projects = [
     {
       id: 1,
@@ -57,6 +58,7 @@ export function Works() {
       demo: null,
     },
   ];
+
   return (
     <div className="pt-20 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +70,7 @@ export function Works() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, _index) => (
+          {projects.map((project) => (
             <div key={project.id} className="group animate-fadeIn">
               <div className="bg-card border border-border rounded-card p-6 h-full flex flex-col transition-all duration-300 hover:border-primary/30 hover:-translate-y-1">
                 <div className="flex items-center justify-between mb-4">

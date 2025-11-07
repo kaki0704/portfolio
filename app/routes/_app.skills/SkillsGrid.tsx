@@ -1,6 +1,7 @@
-import { SkillIcon } from "./SkillIcon";
-import { Progress } from "./ui/progress";
-export function Skills() {
+import { SkillIcon } from "~/components/SkillIcon";
+import { Progress } from "~/components/ui/progress";
+
+export function SkillsGrid() {
   const skillCategories = [
     {
       title: "Expert (Lv.3)",
@@ -39,6 +40,7 @@ export function Skills() {
       skills: [{ name: "Python", level: 60 }],
     },
   ];
+
   const softSkills = [
     {
       name: "エンジニアリングマネジメント",
@@ -61,6 +63,7 @@ export function Skills() {
       level: 87,
     },
   ];
+
   return (
     <div className="pt-20 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

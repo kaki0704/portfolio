@@ -1,7 +1,7 @@
 import type { LoaderFunctionArgs } from "react-router";
 import { Outlet, useLoaderData, useLocation, useNavigate } from "react-router";
-import { Navigation } from "../components/Navigation";
-import { getSession } from "../lib/session.server";
+import { Navigation } from "~/components/Navigation";
+import { getSession } from "~/lib/session.server";
 export async function loader({ request }: LoaderFunctionArgs) {
   const session = await getSession(request.headers.get("Cookie"));
   const currentPage = session.get("currentPage");

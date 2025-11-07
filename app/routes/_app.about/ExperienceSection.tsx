@@ -1,7 +1,9 @@
 import { ExternalLink } from "lucide-react";
 import { useState } from "react";
-export function About() {
+
+export function ExperienceSection() {
   const [selectedCompany, setSelectedCompany] = useState(0);
+
   const experiences = [
     {
       id: 0,
@@ -96,7 +98,9 @@ export function About() {
       url: null,
     },
   ];
+
   const currentExperience = experiences[selectedCompany];
+
   return (
     <div className="pt-20 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -165,7 +169,7 @@ export function About() {
               <div>
                 <h4 className="mb-4">使用技術</h4>
                 <div className="flex flex-wrap gap-2">
-                  {currentExperience.technologies.map((tech, _index) => (
+                  {currentExperience.technologies.map((tech) => (
                     <span
                       key={tech}
                       className="px-3 py-1 bg-muted text-muted-foreground rounded-lg border border-border"
