@@ -62,13 +62,14 @@ export function BlogContent() {
             prose-p:text-muted-foreground prose-p:leading-relaxed
             prose-a:text-primary prose-a:no-underline hover:prose-a:underline
             prose-strong:text-foreground
-            prose-code:text-primary prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-            prose-pre:bg-muted prose-pre:text-foreground
+            prose-code:not(.hljs):text-primary prose-code:not(.hljs):bg-muted prose-code:not(.hljs):px-1.5 prose-code:not(.hljs):py-0.5 prose-code:not(.hljs):rounded prose-code:before:content-none prose-code:after:content-none
             prose-blockquote:border-primary prose-blockquote:text-muted-foreground
             prose-th:bg-muted prose-th:border-border
             prose-td:border-border
             prose-hr:border-border
-            prose-img:rounded-lg"
+            prose-img:rounded-lg
+            [&_pre]:!my-6 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:shadow-sm
+            [&_pre_.hljs]:!p-4 [&_pre_.hljs]:block"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 

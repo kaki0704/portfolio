@@ -1,6 +1,42 @@
+import hljs from "highlight.js";
 import type { LoaderFunctionArgs, MetaFunction } from "react-router";
 import { getBlogDetail, getBlogList } from "~/lib/microcms.server";
 import { BlogContent } from "./BlogContent";
+
+function highlightCode(content: string): string {
+  const codeBlockRegex = /<pre><code(?:\s+class="language-(\w+)")?>([\s\S]*?)<\/code><\/pre>/g;
+
+  let result = content;
+  const matches = Array.from(content.matchAll(codeBlockRegex));
+
+  if (matches.length === 0) {
+    return content;
+  }
+
+  for (const match of matches) {
+    const [fullMatch, language = "plaintext", code] = match;
+    const decodedCode = code
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&amp;/g, "&")
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'");
+
+    try {
+      const highlighted = hljs.highlight(decodedCode, {
+        language: language,
+        ignoreIllegals: true,
+      });
+
+      const highlightedHtml = `<pre><code class="hljs language-${language}">${highlighted.value}</code></pre>`;
+      result = result.replace(fullMatch, highlightedHtml);
+    } catch (error) {
+      console.error(`Failed to highlight code block with language: ${language}`, error);
+    }
+  }
+
+  return result;
+}
 
 export async function loader({ params, context }: LoaderFunctionArgs) {
   const slug = params.slug;
@@ -12,8 +48,7 @@ export async function loader({ params, context }: LoaderFunctionArgs) {
 
   try {
     const post = await getBlogDetail(env, slug);
-
-    // 関連記事を取得（同じカテゴリの記事を3件）
+    const highlightedContent = highlightCode(post.content);
     const { contents: allPosts } = await getBlogList(env, {
       orders: "-publishedAt",
       limit: 100,
@@ -23,7 +58,7 @@ export async function loader({ params, context }: LoaderFunctionArgs) {
       .filter((p) => p.id !== post.id && p.category?.id === post.category?.id)
       .slice(0, 3);
 
-    return { post, relatedPosts };
+    return { post: { ...post, content: highlightedContent }, relatedPosts };
   } catch (error) {
     console.error("Blog detail error:", error);
     throw new Response(

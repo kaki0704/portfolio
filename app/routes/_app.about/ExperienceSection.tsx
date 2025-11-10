@@ -112,14 +112,14 @@ export function ExperienceSection() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
-          <div className="lg:w-80 flex-shrink-0">
+          <div className="lg:w-80 shrink-0">
             <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible space-x-2 lg:space-x-0 lg:space-y-2 pb-2 lg:pb-0">
               {experiences.map((exp, index) => (
                 <button
                   type="button"
                   key={exp.id}
                   onClick={() => setSelectedCompany(index)}
-                  className={`px-4 py-3 text-left rounded-lg transition-all duration-200 flex-shrink-0 lg:w-full cursor-pointer ${
+                  className={`px-4 py-3 text-left rounded-lg transition-all duration-200 shrink-0 lg:w-full cursor-pointer ${
                     selectedCompany === index
                       ? "bg-muted text-primary border-l-2 border-primary"
                       : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
@@ -159,7 +159,7 @@ export function ExperienceSection() {
                 <ul className="space-y-3">
                   {currentExperience.responsibilities.map((responsibility, index) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></div>
                       <span className="text-muted-foreground">{responsibility}</span>
                     </li>
                   ))}

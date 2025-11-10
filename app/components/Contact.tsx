@@ -74,7 +74,7 @@ export function Contact() {
                   const IconComponent = method.icon;
                   return (
                     <div key={index} className="flex items-center space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <div className="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                         <IconComponent className="text-primary" size={20} />
                       </div>
                       <div>
