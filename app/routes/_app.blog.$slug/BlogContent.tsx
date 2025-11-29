@@ -1,5 +1,7 @@
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import { useLoaderData, useNavigate } from "react-router";
+import { Badge } from "~/components/ui/badge";
+import { Card, CardContent } from "~/components/ui/card";
 import type { loader } from "./route";
 
 export function BlogContent() {
@@ -21,9 +23,7 @@ export function BlogContent() {
         <header className="mb-12 animate-fadeIn">
           {post.category && (
             <div className="mb-6">
-              <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                {post.category.name}
-              </span>
+              <Badge variant="default">{post.category.name}</Badge>
             </div>
           )}
           <h1 className="mb-6">{post.title}</h1>
@@ -68,26 +68,10 @@ export function BlogContent() {
             prose-td:border-border
             prose-hr:border-border
             prose-img:rounded-lg
-            [&_pre]:!my-6 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:shadow-sm
-            [&_pre_.hljs]:!p-4 [&_pre_.hljs]:block"
+            [&_pre]:my-6! [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:shadow-sm
+            [&_pre_.hljs]:p-4! [&_pre_.hljs]:block"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
-
-        <div className="mt-12 p-6 bg-muted rounded-lg animate-fadeIn">
-          <div className="flex items-start space-x-4">
-            <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
-              <User className="text-primary" size={24} />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-semibold mb-2">Yuki Yamada</h3>
-              <p className="text-muted-foreground">
-                ビジネスを加速させる、境界を越えるエンジニアリング。
-                10年以上の経験を持つフルスタックエンジニアとして、
-                スタートアップから大企業まで幅広いプロジェクトをリードしてきました。
-              </p>
-            </div>
-          </div>
-        </div>
 
         {relatedPosts.length > 0 && (
           <div className="mt-16 animate-fadeIn">
@@ -104,26 +88,26 @@ export function BlogContent() {
                     }
                   }}
                 >
-                  <div className="bg-card border border-border rounded-lg p-6 h-full transition-all duration-300 hover:border-primary/30 hover:-translate-y-1">
-                    {relatedPost.category && (
-                      <div className="mb-3">
-                        <span className="text-xs text-primary font-medium">
-                          {relatedPost.category.name}
-                        </span>
-                      </div>
-                    )}
-                    <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                      {relatedPost.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
-                      {relatedPost.content.replace(/<[^>]*>/g, "").substring(0, 100)}...
-                    </p>
-                    <time className="text-xs text-muted-foreground">
-                      {new Date(
-                        relatedPost.publishedAt || relatedPost.createdAt,
-                      ).toLocaleDateString("ja-JP")}
-                    </time>
-                  </div>
+                  <Card className="h-full transition-all duration-300 hover:border-[rgb(var(--primary))]/30 hover:-translate-y-1">
+                    <CardContent className="p-6">
+                      {relatedPost.category && (
+                        <div className="mb-3">
+                          <Badge variant="outline">{relatedPost.category.name}</Badge>
+                        </div>
+                      )}
+                      <h3 className="font-semibold mb-2 group-hover:text-[rgb(var(--primary))] transition-colors line-clamp-2">
+                        {relatedPost.title}
+                      </h3>
+                      <p className="text-sm text-[rgb(var(--muted-foreground))] line-clamp-3 mb-4">
+                        {relatedPost.content.replace(/<[^>]*>/g, "").substring(0, 100)}...
+                      </p>
+                      <time className="text-xs text-[rgb(var(--muted-foreground))]">
+                        {new Date(
+                          relatedPost.publishedAt || relatedPost.createdAt,
+                        ).toLocaleDateString("ja-JP")}
+                      </time>
+                    </CardContent>
+                  </Card>
                 </article>
               ))}
             </div>

@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { useState } from "react";
+import { Badge } from "~/components/ui/badge";
 
 export function ExperienceSection() {
   const [selectedCompany, setSelectedCompany] = useState(0);
@@ -18,7 +19,6 @@ export function ExperienceSection() {
         "インフラ構築・運用、開発環境の整備（AWS, GCP, GitHub Actions）",
         "プロダクト要件に応じた技術選定と導入の意思決定",
         "採用計画策定、面接、オンボーディングの実施",
-        "チームメンバーとの1on1を通じた目標設定、評価、キャリア支援",
       ],
       technologies: ["Remix", "Next.js", "Go", "TypeScript", "MySQL", "AWS", "GCP"],
       url: null,
@@ -170,12 +170,9 @@ export function ExperienceSection() {
                 <h4 className="mb-4">使用技術</h4>
                 <div className="flex flex-wrap gap-2">
                   {currentExperience.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-muted text-muted-foreground rounded-lg border border-border"
-                    >
+                    <Badge key={tech} variant="secondary">
                       {tech}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
               </div>

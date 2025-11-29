@@ -1,7 +1,22 @@
 import hljs from "highlight.js";
+import { marked } from "marked";
 import type { LoaderFunctionArgs, MetaFunction } from "react-router";
 import { getBlogDetail, getBlogList } from "~/lib/microcms.server";
 import { BlogContent } from "./BlogContent";
+
+// Configure marked
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+});
+
+function parseMarkdown(markdown: string): string {
+  // Convert markdown to HTML
+  const html = marked.parse(markdown) as string;
+
+  // Apply syntax highlighting to code blocks
+  return highlightCode(html);
+}
 
 function highlightCode(content: string): string {
   const codeBlockRegex = /<pre><code(?:\s+class="language-(\w+)")?>([\s\S]*?)<\/code><\/pre>/g;
@@ -48,7 +63,7 @@ export async function loader({ params, context }: LoaderFunctionArgs) {
 
   try {
     const post = await getBlogDetail(env, slug);
-    const highlightedContent = highlightCode(post.content);
+    const htmlContent = parseMarkdown(post.content);
     const { contents: allPosts } = await getBlogList(env, {
       orders: "-publishedAt",
       limit: 100,
@@ -58,7 +73,7 @@ export async function loader({ params, context }: LoaderFunctionArgs) {
       .filter((p) => p.id !== post.id && p.category?.id === post.category?.id)
       .slice(0, 3);
 
-    return { post: { ...post, content: highlightedContent }, relatedPosts };
+    return { post: { ...post, content: htmlContent }, relatedPosts };
   } catch (error) {
     console.error("Blog detail error:", error);
     throw new Response(

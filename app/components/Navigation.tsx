@@ -10,7 +10,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
-    // { id: "works", label: "Works" },
+    { id: "works", label: "Works" },
     { id: "skills", label: "Skills" },
     { id: "blog", label: "Blog" },
   ];
@@ -25,7 +25,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           <button
             type="button"
             onClick={() => handleNavClick("home")}
-            className="font-medium text-foreground hover:text-primary transition-colors cursor-pointer"
+            className="!text-2xl !font-bold text-foreground hover:text-primary transition-colors cursor-pointer"
           >
             yamady
           </button>

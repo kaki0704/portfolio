@@ -53,6 +53,7 @@ export default function AppLayout() {
                 <ul className="space-y-2">
                   {[
                     { id: "about", label: "About" },
+                    { id: "works", label: "Works" },
                     { id: "skills", label: "Skills" },
                     { id: "blog", label: "Blog" },
                   ].map((item) => (
@@ -72,10 +73,12 @@ export default function AppLayout() {
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="mailto:yuki.yamada@example.com"
+                      href="https://www.facebook.com/yuuki.yamada.351"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary transition-colors text-sm"
                     >
-                      Email
+                      Facebook
                     </a>
                   </li>
                   <li>

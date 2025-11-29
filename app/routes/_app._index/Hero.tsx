@@ -1,6 +1,6 @@
+import FacebookBoxFillIcon from "remixicon-react/FacebookBoxFillIcon";
 import GithubFillIcon from "remixicon-react/GithubFillIcon";
 import LinkedinBoxFillIcon from "remixicon-react/LinkedinBoxFillIcon";
-import MailFillIcon from "remixicon-react/MailFillIcon";
 
 interface HeroProps {
   onNavigate: (page: string) => void;
@@ -13,7 +13,7 @@ export function Hero({ onNavigate }: HeroProps) {
         <div className="text-center px-4 max-w-4xl mx-auto animate-fadeIn">
           <h1 className="mb-6">Hi, I'm Yamada Yuki 🐢</h1>
           <div className="mb-8">
-            <h2 className="text-muted-foreground mb-4">Software Engineer, Engineering Manager</h2>
+            <h2 className="text-muted-foreground mb-4">Software Engineer, Manager</h2>
           </div>
           <div className="flex justify-center space-x-6 mb-12">
             <a
@@ -33,10 +33,12 @@ export function Hero({ onNavigate }: HeroProps) {
               <LinkedinBoxFillIcon size={24} />
             </a>
             <a
-              href="mailto:yuki@example.com"
+              href="https://www.facebook.com/yuuki.yamada.351"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-3 text-muted-foreground hover:text-primary transition-colors"
             >
-              <MailFillIcon size={24} />
+              <FacebookBoxFillIcon size={24} />
             </a>
           </div>
           <div>

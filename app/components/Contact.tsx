@@ -1,10 +1,9 @@
 import { useId } from "react";
+import FacebookBoxFillIcon from "remixicon-react/FacebookBoxFillIcon";
 import GithubFillIcon from "remixicon-react/GithubFillIcon";
 import LinkedinBoxFillIcon from "remixicon-react/LinkedinBoxFillIcon";
-import MailFillIcon from "remixicon-react/MailFillIcon";
 import MapPinFillIcon from "remixicon-react/MapPinFillIcon";
 import PhoneFillIcon from "remixicon-react/PhoneFillIcon";
-import TwitterFillIcon from "remixicon-react/TwitterFillIcon";
 export function Contact() {
   const formIdPrefix = useId();
   const firstNameId = `${formIdPrefix}-firstName`;
@@ -14,10 +13,10 @@ export function Contact() {
   const messageId = `${formIdPrefix}-message`;
   const contactMethods = [
     {
-      icon: MailFillIcon,
-      label: "Email",
-      value: "yuki.yamada@example.com",
-      href: "mailto:yuki.yamada@example.com",
+      icon: FacebookBoxFillIcon,
+      label: "Facebook",
+      value: "Yuuki Yamada",
+      href: "https://www.facebook.com/yuuki.yamada.351",
       primary: true,
     },
     {
@@ -39,19 +38,19 @@ export function Contact() {
     {
       icon: GithubFillIcon,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/kaki0704",
       color: "hover:text-foreground",
     },
     {
       icon: LinkedinBoxFillIcon,
       label: "LinkedIn",
-      href: "https://example.com",
+      href: "https://linkedin.com",
       color: "hover:text-blue-400",
     },
     {
-      icon: TwitterFillIcon,
-      label: "Twitter",
-      href: "https://example.com",
+      icon: FacebookBoxFillIcon,
+      label: "Facebook",
+      href: "https://www.facebook.com/yuuki.yamada.351",
       color: "hover:text-blue-400",
     },
   ];

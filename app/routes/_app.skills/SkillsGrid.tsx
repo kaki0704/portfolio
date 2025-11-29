@@ -1,4 +1,5 @@
 import { SkillIcon } from "~/components/SkillIcon";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { Progress } from "~/components/ui/progress";
 
 export function SkillsGrid() {
@@ -73,57 +74,60 @@ export function SkillsGrid() {
 
         <div className="space-y-12 mb-16">
           {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className="bg-card p-6 rounded-card border border-border animate-fadeIn"
-            >
-              <div className="mb-6">
-                <h3 className="mb-2">{category.title}</h3>
-                <p className="text-muted-foreground">{category.description}</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-3 animate-fadeIn">
-                    <div className="flex items-center space-x-3">
-                      <SkillIcon name={skill.name} size={24} />
-                      <span className="font-medium">{skill.name}</span>
-                    </div>
-                    <div className="space-y-1">
-                      <Progress value={skill.level} className="h-2" />
-                      <div className="flex justify-between">
-                        <span className="caption text-muted-foreground">Level</span>
-                        <span className="caption text-primary">{skill.level}%</span>
+            <Card key={categoryIndex} className="animate-fadeIn">
+              <CardHeader>
+                <CardTitle>{category.title}</CardTitle>
+                <CardDescription>{category.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex} className="space-y-3 animate-fadeIn">
+                      <div className="flex items-center space-x-3">
+                        <SkillIcon name={skill.name} size={24} />
+                        <span className="font-medium">{skill.name}</span>
+                      </div>
+                      <div className="space-y-1">
+                        <Progress value={skill.level} className="h-2" />
+                        <div className="flex justify-between">
+                          <span className="caption text-[rgb(var(--muted-foreground))]">Level</span>
+                          <span className="caption text-[rgb(var(--primary))]">{skill.level}%</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
-        <div className="bg-card p-6 rounded-card border border-border animate-fadeIn">
-          <div className="mb-6">
-            <h3 className="mb-2">ソフトスキル</h3>
-            <p className="text-muted-foreground">
+        <Card className="animate-fadeIn">
+          <CardHeader>
+            <CardTitle>ソフトスキル</CardTitle>
+            <CardDescription>
               技術力だけでなく、チームやビジネスに貢献するためのソフトスキルも重視しています。
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {softSkills.map((skill, index) => (
-              <div key={index} className="space-y-4 animate-fadeIn">
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <h4>{skill.name}</h4>
-                    <span className="caption text-primary">{skill.level}%</span>
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {softSkills.map((skill, index) => (
+                <div key={index} className="space-y-4 animate-fadeIn">
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <h4>{skill.name}</h4>
+                      <span className="caption text-[rgb(var(--primary))]">{skill.level}%</span>
+                    </div>
+                    <p className="text-[rgb(var(--muted-foreground))] text-sm mb-3">
+                      {skill.description}
+                    </p>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-3">{skill.description}</p>
+                  <Progress value={skill.level} className="h-2" />
                 </div>
-                <Progress value={skill.level} className="h-2" />
-              </div>
-            ))}
-          </div>
-        </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
