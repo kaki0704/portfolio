@@ -13,10 +13,11 @@ export function BlogList() {
   const { posts } = useLoaderData<typeof loader>();
 
   return (
-    <div className="pt-20 pb-16">
+    <section className="px-4 pb-20 pt-28 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 animate-fadeIn">
-          <h1 className="mb-4">Blog</h1>
+          <p className="eyebrow mb-5">Notes</p>
+          <h1 className="mb-6">Blog</h1>
           <p className="text-muted-foreground">
             技術的な学びや経験、チーム開発での気づきなどを発信しています。
           </p>
@@ -25,18 +26,18 @@ export function BlogList() {
         <div className="space-y-8">
           {posts.map((post) => (
             <Link key={post.id} to={`/blog/${post.id}`} className="block group animate-fadeIn">
-              <Card className="transition-all duration-300 hover:border-[rgb(var(--primary))]/30 hover:-translate-y-1">
-                <CardContent className="p-6">
+              <Card className="transition-all duration-300 hover:-translate-y-1 hover:border-[rgb(var(--primary))]/45">
+                <CardContent className="p-6 sm:p-7">
                   <div className="flex flex-col space-y-4">
                     <div>
-                      <h2 className="mb-3 group-hover:text-[rgb(var(--primary))] transition-colors">
+                      <h2 className="mb-3 transition-colors group-hover:text-[rgb(var(--primary))]">
                         {post.title}
                       </h2>
-                      <p className="text-[rgb(var(--muted-foreground))] mb-4 line-clamp-2">
+                      <p className="mb-4 line-clamp-2 text-[rgb(var(--muted-foreground))]">
                         {getExcerpt(post.content)}
                       </p>
                     </div>
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-[rgb(var(--muted-foreground))]">
+                    <div className="flex flex-wrap items-center gap-4 border-t border-border/70 pt-4 text-sm text-[rgb(var(--muted-foreground))]">
                       <time dateTime={post.publishedAt || post.createdAt}>
                         {new Date(post.publishedAt || post.createdAt).toLocaleDateString("ja-JP", {
                           year: "numeric",
@@ -53,6 +54,6 @@ export function BlogList() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

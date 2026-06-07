@@ -42,13 +42,14 @@ export function SkillIcon({ name, size = 24 }: SkillIconProps) {
   // Special case for Remix - use official brand asset
   if (name === "Remix") {
     return (
-      <img
-        src="https://remix.run/_brand/remix-letter-glowing.svg"
-        alt={name}
-        width={size}
-        height={size}
-        className="inline-block"
-      />
+      <span
+        role="img"
+        aria-label={name}
+        className="inline-flex items-center justify-center rounded-md border border-[rgb(var(--primary))]/30 bg-[rgb(var(--primary))]/10 font-display font-extrabold text-[rgb(var(--primary))]"
+        style={{ width: size, height: size, fontSize: Math.max(10, size * 0.42) }}
+      >
+        Rx
+      </span>
     );
   }
 

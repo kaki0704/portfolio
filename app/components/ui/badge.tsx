@@ -3,17 +3,17 @@ import type * as React from "react";
 import { cn } from "~/lib/utils";
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-normal transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2",
+  "inline-flex items-center rounded-md border px-2.5 py-1 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring/70 focus:ring-offset-2 focus:ring-offset-background",
   {
     variants: {
       variant: {
         default:
-          "border-transparent bg-[rgb(var(--primary))] text-[rgb(var(--primary-foreground))] shadow hover:bg-[rgb(var(--primary))]/80",
+          "border-transparent bg-[rgb(var(--primary))] text-[rgb(var(--primary-foreground))] shadow hover:bg-[rgb(var(--primary))]/85",
         secondary:
-          "border-transparent bg-[rgb(var(--secondary))] text-[rgb(var(--secondary-foreground))] hover:bg-[rgb(var(--secondary))]/80",
+          "border-[rgb(var(--border))]/70 bg-[rgb(var(--secondary))]/70 text-[rgb(var(--secondary-foreground))] hover:bg-[rgb(var(--secondary))]",
         destructive:
           "border-transparent bg-[rgb(var(--destructive))] text-[rgb(var(--destructive-foreground))] shadow hover:bg-[rgb(var(--destructive))]/80",
-        outline: "text-[rgb(var(--foreground))] border-[rgb(var(--border))]",
+        outline: "border-[rgb(var(--border))]/80 text-[rgb(var(--foreground))]",
       },
     },
     defaultVariants: {

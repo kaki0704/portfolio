@@ -5,7 +5,11 @@ import { Hero } from "./Hero";
 export const meta: MetaFunction = () => {
   return [
     { title: "Yuki Yamada - Portfolio" },
-    { name: "description", content: "Yamada Yuki's Portofolio" },
+    {
+      name: "description",
+      content:
+        "Yuki Yamada's portfolio: software engineering, engineering management, product development, and technical writing.",
+    },
   ];
 };
 

@@ -18,7 +18,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap",
   },
 ];
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -42,7 +42,7 @@ export default function App() {
   return <Outlet />;
 }
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
+  let message = "Error";
   let details = "An unexpected error occurred.";
   let stack: string | undefined;
   if (isRouteErrorResponse(error)) {
@@ -54,14 +54,16 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     stack = error.stack;
   }
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
+    <main className="min-h-screen bg-background p-6 pt-24 text-foreground">
+      <div className="mx-auto max-w-3xl rounded-card border border-border/70 bg-card/80 p-8">
+        <h1>{message}</h1>
+        <p className="mt-4 text-muted-foreground">{details}</p>
+        {stack && (
+          <pre className="mt-6 w-full overflow-x-auto rounded-lg bg-muted p-4">
+            <code>{stack}</code>
+          </pre>
+        )}
+      </div>
     </main>
   );
 }

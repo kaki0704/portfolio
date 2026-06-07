@@ -9,12 +9,12 @@ export function BlogContent() {
   const navigate = useNavigate();
 
   return (
-    <article className="pt-20 pb-16">
+    <article className="px-4 pb-20 pt-28 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <button
           type="button"
           onClick={() => navigate("/blog")}
-          className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors mb-8 cursor-pointer"
+          className="mb-8 flex cursor-pointer items-center space-x-2 rounded-button px-0 py-2 text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70"
         >
           <ArrowLeft size={20} />
           <span>Back to Blog</span>
@@ -28,7 +28,7 @@ export function BlogContent() {
           )}
           <h1 className="mb-6">{post.title}</h1>
 
-          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground pb-8 border-b border-border">
+          <div className="flex flex-wrap gap-4 border-b border-border/70 pb-8 text-sm text-muted-foreground">
             <div className="flex items-center space-x-2">
               <User size={16} />
               <span>Yuki Yamada</span>
@@ -51,7 +51,7 @@ export function BlogContent() {
             <img
               src={post.eyecatch.url}
               alt={post.title}
-              className="w-full h-auto rounded-lg shadow-lg"
+              className="h-auto w-full rounded-card border border-border/70 shadow-[0_28px_90px_rgb(0_0_0/0.35)]"
             />
           </div>
         )}
@@ -75,8 +75,8 @@ export function BlogContent() {
 
         {relatedPosts.length > 0 && (
           <div className="mt-16 animate-fadeIn">
-            <h2 className="text-2xl font-bold mb-8">関連記事</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <h2 className="mb-8 text-2xl font-bold">関連記事</h2>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {relatedPosts.map((relatedPost) => (
                 <article
                   key={relatedPost.id}
@@ -88,7 +88,7 @@ export function BlogContent() {
                     }
                   }}
                 >
-                  <Card className="h-full transition-all duration-300 hover:border-[rgb(var(--primary))]/30 hover:-translate-y-1">
+                  <Card className="h-full transition-all duration-300 hover:-translate-y-1 hover:border-[rgb(var(--primary))]/45">
                     <CardContent className="p-6">
                       {relatedPost.category && (
                         <div className="mb-3">

@@ -66,28 +66,35 @@ export function SkillsGrid() {
   ];
 
   return (
-    <div className="pt-20 pb-16">
+    <section className="px-4 pb-20 pt-28 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fadeIn">
+        <div className="mb-16 max-w-3xl animate-fadeIn">
+          <p className="eyebrow mb-5">Capabilities</p>
           <h1 className="mb-6">Skills</h1>
+          <p className="text-muted-foreground">
+            プロダクト開発で継続的に使ってきた技術と、チーム開発を進めるための実務スキルです。
+          </p>
         </div>
 
         <div className="space-y-12 mb-16">
           {skillCategories.map((category, categoryIndex) => (
-            <Card key={categoryIndex} className="animate-fadeIn">
-              <CardHeader>
+            <Card key={categoryIndex} className="animate-fadeIn overflow-hidden">
+              <CardHeader className="border-b border-border/70">
                 <CardTitle>{category.title}</CardTitle>
                 <CardDescription>{category.description}</CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <CardContent className="p-6">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-3 animate-fadeIn">
+                    <div
+                      key={skillIndex}
+                      className="animate-fadeIn rounded-lg border border-border/60 bg-background/40 p-4 transition-colors hover:border-[rgb(var(--primary))]/30"
+                    >
                       <div className="flex items-center space-x-3">
                         <SkillIcon name={skill.name} size={24} />
                         <span className="font-medium">{skill.name}</span>
                       </div>
-                      <div className="space-y-1">
+                      <div className="mt-4 space-y-2">
                         <Progress value={skill.level} className="h-2" />
                         <div className="flex justify-between">
                           <span className="caption text-[rgb(var(--muted-foreground))]">Level</span>
@@ -103,16 +110,19 @@ export function SkillsGrid() {
         </div>
 
         <Card className="animate-fadeIn">
-          <CardHeader>
+          <CardHeader className="border-b border-border/70">
             <CardTitle>ソフトスキル</CardTitle>
             <CardDescription>
               技術力だけでなく、チームやビジネスに貢献するためのソフトスキルも重視しています。
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <CardContent className="p-6">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               {softSkills.map((skill, index) => (
-                <div key={index} className="space-y-4 animate-fadeIn">
+                <div
+                  key={index}
+                  className="animate-fadeIn rounded-lg border border-border/60 bg-background/40 p-5"
+                >
                   <div>
                     <div className="flex justify-between items-center mb-2">
                       <h4>{skill.name}</h4>
@@ -129,6 +139,6 @@ export function SkillsGrid() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </section>
   );
 }

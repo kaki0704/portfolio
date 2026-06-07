@@ -14,6 +14,7 @@ export function ProjectsGrid() {
       thumbnail: "/images/fuyukaki-ui-screen.png",
       github: "https://github.com/kaki0704/fuyukaki-ui",
       demo: "https://fuyukaki-ui.com",
+      status: "Design system",
     },
     {
       id: 2,
@@ -24,45 +25,57 @@ export function ProjectsGrid() {
       thumbnail: "/images/news-gathering-screen.png",
       github: "https://github.com/kaki0704/NewsGathering",
       demo: "https://news-gathering.work",
+      status: "Web app",
     },
   ];
 
   return (
-    <div className="pt-20 pb-16">
+    <section className="px-4 pb-20 pt-28 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 animate-fadeIn">
-          <h1 className="mb-4">Works</h1>
-          <p className="text-muted-foreground max-w-2xl">
+        <div className="mb-16 max-w-3xl animate-fadeIn">
+          <p className="eyebrow mb-5">Selected work</p>
+          <h1 className="mb-6">Works</h1>
+          <p className="max-w-2xl text-muted-foreground">
             個人で開発したプロジェクトの一覧です。新しい技術の習得と実践的なアプリケーション開発に取り組んでいます。
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-7 lg:grid-cols-2">
           {projects.map((project) => (
             <div key={project.id} className="group animate-fadeIn">
-              <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:border-[rgb(var(--primary))]/30 hover:-translate-y-1">
+              <Card className="h-full overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-[rgb(var(--primary))]/45">
                 {project.thumbnail && (
-                  <div className="relative w-full h-32 overflow-hidden bg-[rgb(var(--muted))]">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[rgb(var(--muted))]">
                     <img
                       src={project.thumbnail}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.035]"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+                    <div className="absolute left-4 top-4 rounded-md border border-border/70 bg-background/70 px-3 py-1 text-xs font-bold text-[rgb(var(--primary))] backdrop-blur">
+                      {project.status}
+                    </div>
                   </div>
                 )}
 
-                <CardContent className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="p-2 bg-[rgb(var(--primary))]/10 rounded-lg w-fit">
-                      <Folder className="w-6 h-6 text-[rgb(var(--primary))]" />
+                <CardContent className="flex flex-1 flex-col p-6 sm:p-7">
+                  <div className="mb-5 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-fit rounded-lg bg-[rgb(var(--primary))]/10 p-2 ring-1 ring-[rgb(var(--primary))]/25">
+                        <Folder className="h-5 w-5 text-[rgb(var(--primary))]" />
+                      </div>
+                      <h3 className="transition-colors group-hover:text-[rgb(var(--primary))]">
+                        {project.title}
+                      </h3>
                     </div>
-                    <div className="flex space-x-3">
+                    <div className="flex space-x-2">
                       {project.github && (
                         <a
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[rgb(var(--muted-foreground))] hover:text-[rgb(var(--primary))] transition-colors"
+                          className="rounded-button p-2 text-[rgb(var(--muted-foreground))] transition-colors hover:bg-muted hover:text-[rgb(var(--primary))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70"
+                          aria-label={`${project.title} GitHub`}
                         >
                           <GithubFillIcon size={20} />
                         </a>
@@ -72,7 +85,8 @@ export function ProjectsGrid() {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[rgb(var(--muted-foreground))] hover:text-[rgb(var(--primary))] transition-colors"
+                          className="rounded-button p-2 text-[rgb(var(--muted-foreground))] transition-colors hover:bg-muted hover:text-[rgb(var(--primary))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70"
+                          aria-label={`${project.title} demo`}
                         >
                           <ExternalLink size={20} />
                         </a>
@@ -81,10 +95,7 @@ export function ProjectsGrid() {
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="mb-3 group-hover:text-[rgb(var(--primary))] transition-colors">
-                      {project.title}
-                    </h3>
-                    <div className="text-sm text-[rgb(var(--muted-foreground))] mb-6 line-clamp-6">
+                    <div className="mb-6 text-sm leading-7 text-[rgb(var(--muted-foreground))]">
                       {project.description}
                     </div>
                   </div>
@@ -102,6 +113,6 @@ export function ProjectsGrid() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

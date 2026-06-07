@@ -35,7 +35,7 @@ export function ExperienceSection() {
         "データ整合性を保つAPI設計と実装",
       ],
       technologies: ["Go", "React"],
-      url: "https://example.com",
+      url: null,
     },
     {
       id: 2,
@@ -50,7 +50,7 @@ export function ExperienceSection() {
         "新技術の導入検討、技術選定",
       ],
       technologies: ["Go", "Nuxt.js", "React Native"],
-      url: "https://example.com",
+      url: null,
     },
     {
       id: 3,
@@ -102,39 +102,43 @@ export function ExperienceSection() {
   const currentExperience = experiences[selectedCompany];
 
   return (
-    <div className="pt-20 pb-16">
+    <section className="px-4 pb-20 pt-28 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 animate-fadeIn">
-          <h1 className="mb-4">経歴</h1>
-          <p className="text-muted-foreground max-w-2xl">
+        <div className="mb-16 max-w-3xl animate-fadeIn">
+          <p className="eyebrow mb-5">Experience</p>
+          <h1 className="mb-6">Career</h1>
+          <p className="max-w-2xl text-muted-foreground">
             2019年にエンジニアとしてキャリアをスタートし、フロントエンドからバックエンド、インフラ、そしてマネジメントまで幅広い技術領域を経験してきました。
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="grid gap-8 lg:grid-cols-[20rem_1fr]">
           <div className="lg:w-80 shrink-0">
-            <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible space-x-2 lg:space-x-0 lg:space-y-2 pb-2 lg:pb-0">
+            <div className="surface-panel flex overflow-x-auto rounded-card p-2 lg:flex-col lg:overflow-x-visible">
               {experiences.map((exp, index) => (
                 <button
                   type="button"
                   key={exp.id}
                   onClick={() => setSelectedCompany(index)}
-                  className={`px-4 py-3 text-left rounded-lg transition-all duration-200 shrink-0 lg:w-full cursor-pointer ${
+                  className={`shrink-0 cursor-pointer rounded-lg px-4 py-3 text-left transition-all duration-200 lg:w-full ${
                     selectedCompany === index
-                      ? "bg-muted text-primary border-l-2 border-primary"
-                      : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                      ? "bg-[rgb(var(--primary))]/10 text-[rgb(var(--primary))] shadow-[inset_0_0_0_1px_rgb(var(--primary)/0.22)]"
+                      : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
                   }`}
                 >
-                  <div className="font-medium">{exp.company.replace("株式会社", "")}</div>
-                  <div className="caption text-muted-foreground mt-1">{exp.period}</div>
+                  <div className="font-semibold">{exp.company.replace("株式会社", "")}</div>
+                  <div className="caption mt-1 text-muted-foreground">{exp.period}</div>
                 </button>
               ))}
             </div>
           </div>
 
           <div className="flex-1">
-            <div key={selectedCompany} className="space-y-6 animate-fadeIn">
-              <div>
+            <div
+              key={selectedCompany}
+              className="surface-panel animate-fadeIn rounded-card p-6 sm:p-8"
+            >
+              <div className="mb-8 border-b border-border/70 pb-8">
                 <div className="flex items-center gap-2 mb-2">
                   <h2>
                     {currentExperience.title} @ {currentExperience.company}
@@ -144,22 +148,22 @@ export function ExperienceSection() {
                       href={currentExperience.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80 transition-colors"
+                      className="rounded-button p-2 text-[rgb(var(--primary))] transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--ring))]/70"
                     >
                       <ExternalLink size={18} />
                     </a>
                   )}
                 </div>
-                <div className="text-muted-foreground mb-4">{currentExperience.period}</div>
-                <p className="text-muted-foreground mb-6">{currentExperience.description}</p>
+                <div className="mb-4 text-muted-foreground">{currentExperience.period}</div>
+                <p className="max-w-3xl text-muted-foreground">{currentExperience.description}</p>
               </div>
 
-              <div>
+              <div className="mb-8">
                 <h4 className="mb-4">主な担当業務</h4>
                 <ul className="space-y-3">
                   {currentExperience.responsibilities.map((responsibility, index) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0"></div>
+                      <div className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[rgb(var(--primary))] shadow-[0_0_14px_rgb(var(--primary)/0.8)]"></div>
                       <span className="text-muted-foreground">{responsibility}</span>
                     </li>
                   ))}
@@ -180,6 +184,6 @@ export function ExperienceSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

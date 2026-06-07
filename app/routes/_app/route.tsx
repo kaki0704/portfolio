@@ -1,3 +1,4 @@
+import { useId } from "react";
 import type { LoaderFunctionArgs } from "react-router";
 import { Outlet, useLoaderData, useLocation, useNavigate } from "react-router";
 import { Navigation } from "~/components/Navigation";
@@ -12,6 +13,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 export default function AppLayout() {
   const location = useLocation();
   const navigate = useNavigate();
+  const mainId = useId();
   useLoaderData<typeof loader>();
   const getCurrentPage = () => {
     const path = location.pathname.slice(1);
@@ -26,26 +28,22 @@ export default function AppLayout() {
   };
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="fixed inset-0 z-0">
-        <img
-          src="/images/background.png"
-          alt="Background"
-          className="w-full h-full object-cover opacity-70"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background/80" />
-      </div>
-
+      <div className="fixed inset-0 z-0 bg-[radial-gradient(circle_at_74%_8%,rgb(var(--primary)/0.16),transparent_32rem),radial-gradient(circle_at_16%_90%,rgb(138_143_152/0.08),transparent_28rem),rgb(var(--background))]" />
+      <Navigation currentPage={getCurrentPage()} onNavigate={handleNavigate} />
       <div className="relative z-10">
-        <Navigation currentPage={getCurrentPage()} onNavigate={handleNavigate} />
-        <main className="relative">
+        <a href={`#${mainId}`} className="skip-link">
+          Skip to content
+        </a>
+        <main id={mainId} className="relative lg:pl-72">
           <Outlet />
         </main>
-        <footer className="border-t border-border py-12">
+        <footer className="border-t border-border/70 py-12 lg:ml-72">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="md:col-span-2">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.4fr_1fr_1fr]">
+              <div>
+                <p className="eyebrow mb-4">Portfolio</p>
                 <h3 className="mb-4">Yamada Yuki</h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="mt-5 text-sm text-muted-foreground">
                   © {new Date().getFullYear()} Yuki Yamada. All rights reserved.
                 </p>
               </div>
@@ -61,7 +59,7 @@ export default function AppLayout() {
                       <button
                         type="button"
                         onClick={() => handleNavigate(item.id)}
-                        className="text-muted-foreground hover:text-primary transition-colors text-sm cursor-pointer"
+                        className="cursor-pointer text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70"
                       >
                         {item.label}
                       </button>
@@ -76,7 +74,7 @@ export default function AppLayout() {
                       href="https://www.facebook.com/yuuki.yamada.351"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70"
                     >
                       Facebook
                     </a>
@@ -86,7 +84,7 @@ export default function AppLayout() {
                       href="https://github.com/kaki0704"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70"
                     >
                       GitHub
                     </a>
@@ -96,7 +94,7 @@ export default function AppLayout() {
                       href="https://linkedin.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70"
                     >
                       LinkedIn
                     </a>

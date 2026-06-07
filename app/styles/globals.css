@@ -1,219 +1,210 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
   --font-size: 16px;
-  --background: 15 15 15;
-  --foreground: 245 245 245;
-  --card: 25 25 25;
-  --card-foreground: 245 245 245;
-  --popover: 20 20 20;
-  --popover-foreground: 245 245 245;
-  --primary: 200 200 200;
-  --primary-foreground: 20 20 20;
-  --secondary: 120 120 120;
-  --secondary-foreground: 245 245 245;
-  --muted: 35 35 35;
-  --muted-foreground: 160 160 160;
-  --accent: 180 180 180;
-  --accent-foreground: 20 20 20;
-  --destructive: 220 80 80;
-  --destructive-foreground: 245 245 245;
-  --border: 60 60 60;
-  --input: 30 30 30;
-  --input-background: 30 30 30;
+  --background: 8 9 10;
+  --foreground: 247 248 248;
+  --card: 15 16 17;
+  --card-foreground: 247 248 248;
+  --popover: 15 16 17;
+  --popover-foreground: 247 248 248;
+  --primary: 94 106 210;
+  --primary-foreground: 247 248 248;
+  --secondary: 22 23 26;
+  --secondary-foreground: 210 213 219;
+  --muted: 18 19 21;
+  --muted-foreground: 138 143 152;
+  --accent: 164 170 185;
+  --accent-foreground: 8 9 10;
+  --destructive: 218 92 92;
+  --destructive-foreground: 255 247 247;
+  --border: 42 43 48;
+  --input: 15 16 17;
+  --input-background: 15 16 17;
   --font-weight-medium: 600;
   --font-weight-normal: 400;
-  --ring: 200 200 200;
-  --elevation-sm: 0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 1px 2px -1px rgba(0, 0, 0, 0.3);
-  --chart-1: 200 200 200;
-  --chart-2: 160 160 160;
-  --chart-3: 120 120 120;
-  --chart-4: 180 180 180;
-  --chart-5: 140 140 140;
+  --ring: 94 106 210;
+  --elevation-sm: none;
+  --chart-1: 94 106 210;
+  --chart-2: 164 170 185;
+  --chart-3: 138 143 152;
+  --chart-4: 107 114 128;
+  --chart-5: 247 248 248;
   --radius: 8px;
-  --radius-card: 16px;
+  --radius-card: 14px;
   --radius-button: 8px;
-  --sidebar: 20 20 20;
-  --sidebar-foreground: 245 245 245;
-  --sidebar-primary: 200 200 200;
-  --sidebar-primary-foreground: 20 20 20;
-  --sidebar-accent: 180 180 180;
-  --sidebar-accent-foreground: 20 20 20;
-  --sidebar-border: 60 60 60;
-  --sidebar-ring: 200 200 200;
-  --text-5xl: 48px;
-  --text-3xl: 36px;
-  --text-2xl: 24px;
-  --text-xl: 20px;
-  --text-lg: 16px;
+  --sidebar: 10 11 12;
+  --sidebar-foreground: 247 248 248;
+  --sidebar-primary: 94 106 210;
+  --sidebar-primary-foreground: 247 248 248;
+  --sidebar-accent: 164 170 185;
+  --sidebar-accent-foreground: 8 9 10;
+  --sidebar-border: 42 43 48;
+  --sidebar-ring: 94 106 210;
+  --text-5xl: clamp(2.7rem, 6.4vw, 5.3rem);
+  --text-3xl: clamp(2rem, 3.8vw, 3rem);
+  --text-2xl: clamp(1.55rem, 2.2vw, 2rem);
+  --text-xl: 1.25rem;
+  --text-lg: 1.05rem;
   --text-base: 16px;
   --text-sm: 14px;
   --text-xs: 12px;
 }
-.light {
-  --background: rgba(243, 244, 246, 1);
-  --foreground: rgba(55, 65, 81, 1);
-  --card: rgba(255, 255, 255, 1);
-  --card-foreground: rgba(55, 65, 81, 1);
-  --popover: rgba(55, 65, 81, 1);
-  --popover-foreground: rgba(249, 250, 251, 1);
-  --primary: rgba(67, 56, 202, 1);
-  --primary-foreground: rgba(199, 210, 254, 1);
-  --secondary: rgba(236, 72, 153, 1);
-  --secondary-foreground: rgba(251, 207, 232, 1);
-  --muted: rgba(243, 244, 246, 1);
-  --muted-foreground: rgba(209, 213, 219, 1);
-  --accent: rgba(45, 212, 191, 1);
-  --accent-foreground: rgba(19, 78, 74, 1);
-  --destructive: rgba(248, 113, 113, 1);
-  --destructive-foreground: rgba(127, 29, 29, 1);
-  --border: rgba(229, 231, 235, 1);
-  --input: rgba(255, 255, 255, 1);
-  --input-background: rgba(255, 255, 255, 1);
-  --ring: rgba(55, 65, 81, 1);
-  --font-weight-medium: 600;
-  --font-weight-normal: 400;
-  --chart-1: rgba(67, 56, 202, 1);
-  --chart-2: rgba(236, 72, 153, 1);
-  --chart-3: rgba(45, 212, 191, 1);
-  --chart-4: rgba(234, 179, 8, 1);
-  --chart-5: rgba(34, 197, 94, 1);
-  --sidebar: rgba(255, 255, 255, 1);
-  --sidebar-foreground: rgba(55, 65, 81, 1);
-  --sidebar-primary: rgba(67, 56, 202, 1);
-  --sidebar-primary-foreground: rgba(199, 210, 254, 1);
-  --sidebar-accent: rgba(45, 212, 191, 1);
-  --sidebar-accent-foreground: rgba(19, 78, 74, 1);
-  --sidebar-border: rgba(229, 231, 235, 1);
-  --sidebar-ring: rgba(55, 65, 81, 1);
-}
+
 @layer base {
   * {
-    border-color: var(--border);
+    border-color: rgb(var(--border));
     outline-color: rgba(var(--ring), 0.5);
   }
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
   body {
-    background-color: var(--background);
-    color: var(--foreground);
-    font-family: "Noto Sans JP", sans-serif;
+    min-height: 100dvh;
+    background:
+      radial-gradient(circle at 72% 10%, rgb(var(--primary) / 0.16), transparent 30rem),
+      radial-gradient(circle at 18% 86%, rgb(107 114 128 / 0.08), transparent 28rem),
+      linear-gradient(135deg, rgb(7 8 9), rgb(var(--background)) 52%, rgb(11 12 14));
+    color: rgb(var(--foreground));
+    font-family: var(--font-sans);
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    content: "";
+    opacity: 0.18;
+    background-image:
+      linear-gradient(rgb(255 255 255 / 0.026) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
   }
 }
 h1 {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-display);
   font-size: var(--text-5xl);
-  font-weight: var(--font-weight-normal);
-  line-height: 1.5;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.92;
+  text-wrap: balance;
 }
 h2 {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-display);
   font-size: var(--text-2xl);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.08;
+  text-wrap: balance;
 }
 h3 {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-display);
   font-size: var(--text-xl);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.18;
 }
 h4 {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-size: var(--text-lg);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.5;
+  font-weight: 600;
+  line-height: 1.35;
 }
 p {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-size: var(--text-base);
   font-weight: var(--font-weight-normal);
-  line-height: 1.5;
+  line-height: 1.85;
+  text-wrap: pretty;
 }
 span {
-  font-family: "Noto Sans JP", sans-serif;
   font-size: var(--text-base);
   font-weight: var(--font-weight-normal);
   line-height: 1.5;
 }
 label {
-  font-family: "Noto Sans JP", sans-serif;
   font-size: var(--text-sm);
   font-weight: var(--font-weight-normal);
   line-height: 1.5;
 }
 button {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-size: var(--text-sm);
-  font-weight: var(--font-weight-normal);
+  font-weight: 600;
   line-height: 1.5;
 }
 input {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-sans);
   font-size: var(--text-base);
   font-weight: var(--font-weight-normal);
   line-height: 1.5;
 }
 .stat-value {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-display);
   font-size: var(--text-3xl);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.5;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 .caption {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: var(--font-display);
   font-size: var(--text-xs);
-  font-weight: var(--font-weight-normal);
+  font-weight: 700;
+  letter-spacing: 0.12em;
   line-height: 1.5;
-}
-html {
-  font-size: var(--font-size);
+  text-transform: uppercase;
 }
 @layer components {
   .prose {
-    color: var(--foreground);
-    max-width: none;
+    color: rgb(var(--foreground));
+    max-width: 72ch;
   }
 
   .prose h1 {
     font-size: var(--text-3xl);
-    font-weight: var(--font-weight-medium);
+    font-weight: 800;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
-    color: var(--foreground);
+    color: rgb(var(--foreground));
   }
 
   .prose h2 {
     font-size: var(--text-2xl);
-    font-weight: var(--font-weight-medium);
+    font-weight: 700;
     margin-top: 3rem;
     margin-bottom: 1rem;
-    color: var(--foreground);
+    color: rgb(var(--foreground));
   }
 
   .prose h3 {
     font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
+    font-weight: 700;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
-    color: var(--foreground);
+    color: rgb(var(--foreground));
   }
 
   .prose h4 {
     font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
+    font-weight: 600;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    color: var(--foreground);
+    color: rgb(var(--foreground));
   }
 
   .prose p {
     margin-bottom: 1.5rem;
     line-height: 1.75;
-    color: var(--muted-foreground);
+    color: rgb(var(--muted-foreground));
   }
 
   .prose a {
-    color: var(--primary);
+    color: rgb(var(--primary));
     text-decoration: none;
   }
 
@@ -222,13 +213,13 @@ html {
   }
 
   .prose strong {
-    font-weight: var(--font-weight-medium);
-    color: var(--foreground);
+    font-weight: 700;
+    color: rgb(var(--foreground));
   }
 
   .prose em {
     font-style: italic;
-    color: var(--foreground);
+    color: rgb(var(--foreground));
   }
 
   .prose ul {
@@ -236,7 +227,7 @@ html {
     margin-bottom: 1.5rem;
     margin-left: 1.5rem;
     list-style-type: disc;
-    color: var(--muted-foreground);
+    color: rgb(var(--muted-foreground));
   }
 
   .prose ol {
@@ -244,17 +235,18 @@ html {
     margin-bottom: 1.5rem;
     margin-left: 1.5rem;
     list-style-type: decimal;
-    color: var(--muted-foreground);
+    color: rgb(var(--muted-foreground));
   }
 
   .prose li {
     margin-bottom: 0.5rem;
-    color: var(--muted-foreground);
+    color: rgb(var(--muted-foreground));
   }
 
   .prose pre {
-    background-color: var(--muted);
-    color: var(--foreground);
+    background-color: rgb(8 11 14);
+    color: rgb(var(--foreground));
+    border: 1px solid rgb(var(--border) / 0.7);
     border-radius: var(--radius);
     padding: 1rem;
     overflow-x: auto;
@@ -262,8 +254,8 @@ html {
   }
 
   .prose code {
-    color: var(--primary);
-    background-color: var(--muted);
+    color: rgb(var(--primary));
+    background-color: rgb(var(--muted));
     padding: 0.125rem 0.375rem;
     border-radius: calc(var(--radius) - 4px);
     font-size: var(--text-sm);
@@ -275,16 +267,16 @@ html {
   }
 
   .prose blockquote {
-    border-left: 4px solid var(--primary);
+    border-left: 4px solid rgb(var(--primary));
     padding-left: 1rem;
     font-style: italic;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    color: var(--muted-foreground);
+    color: rgb(var(--muted-foreground));
   }
 
   .prose hr {
-    border-color: var(--border);
+    border-color: rgb(var(--border));
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
@@ -297,23 +289,23 @@ html {
   }
 
   .prose th {
-    border: 1px solid var(--border);
+    border: 1px solid rgb(var(--border));
     padding: 0.5rem;
-    background-color: var(--muted);
+    background-color: rgb(var(--muted));
     font-weight: var(--font-weight-medium);
     text-align: left;
   }
 
   .prose td {
-    border: 1px solid var(--border);
+    border: 1px solid rgb(var(--border));
     padding: 0.5rem;
   }
 
   .prose img {
     border-radius: var(--radius);
     box-shadow:
-      0 4px 6px -1px rgb(0 0 0 / 0.1),
-      0 2px 4px -2px rgb(0 0 0 / 0.1);
+      0 24px 80px rgb(0 0 0 / 0.32),
+      0 0 0 1px rgb(var(--border) / 0.7);
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     width: 100%;
@@ -329,10 +321,61 @@ html {
 }
 
 @layer utilities {
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    transform: translateY(-140%);
+    border-radius: var(--radius-button);
+    background: rgb(var(--primary));
+    color: rgb(var(--primary-foreground));
+    padding: 0.6rem 0.85rem;
+    font-weight: 700;
+    transition: transform 180ms ease;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+    outline: 2px solid rgb(var(--foreground));
+    outline-offset: 2px;
+  }
+
+  .surface-panel {
+    border: 1px solid rgb(var(--border) / 0.72);
+    background: rgb(var(--card) / 0.62);
+    box-shadow: var(--elevation-sm);
+    backdrop-filter: blur(12px);
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgb(var(--primary));
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-gradient-cool {
+    background: linear-gradient(
+      110deg,
+      rgb(var(--foreground)),
+      rgb(var(--primary)) 58%,
+      rgb(var(--accent))
+    );
+    background-clip: text;
+    color: transparent;
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(10px);
+      transform: translateY(14px);
     }
     to {
       opacity: 1;
@@ -340,6 +383,6 @@ html {
     }
   }
   .animate-fadeIn {
-    animation: fadeIn 0.5s ease-out;
+    animation: fadeIn 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
