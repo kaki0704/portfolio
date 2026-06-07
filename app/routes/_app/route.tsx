@@ -28,7 +28,7 @@ export default function AppLayout() {
   };
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="fixed inset-0 z-0 bg-[radial-gradient(circle_at_74%_8%,rgb(var(--primary)/0.16),transparent_32rem),radial-gradient(circle_at_16%_90%,rgb(138_143_152/0.08),transparent_28rem),rgb(var(--background))]" />
+      <div className="app-background fixed inset-0 z-0" />
       <Navigation currentPage={getCurrentPage()} onNavigate={handleNavigate} />
       <div className="relative z-10">
         <a href={`#${mainId}`} className="skip-link">

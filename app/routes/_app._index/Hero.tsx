@@ -112,12 +112,12 @@ export function Hero({ onNavigate }: HeroProps) {
             <img
               src="/images/fuyukaki-ui-screen.png"
               alt="fuyukaki-ui project screen"
-              className="absolute right-0 top-0 w-[78%] rotate-3 rounded-2xl border border-border/70 object-cover shadow-none"
+              className="absolute right-0 top-0 w-[78%] rotate-3 rounded-2xl border border-border/70 object-cover shadow-[0_24px_70px_rgb(82_95_212/0.13)]"
             />
             <img
               src="/images/news-gathering-screen.png"
               alt="News Gathering project screen"
-              className="absolute bottom-0 left-0 w-[70%] -rotate-2 rounded-2xl border border-border/70 object-cover shadow-none"
+              className="absolute bottom-0 left-0 w-[70%] -rotate-2 rounded-2xl border border-border/70 object-cover shadow-[0_24px_70px_rgb(82_95_212/0.16)]"
             />
           </div>
         </div>
@@ -130,12 +130,12 @@ export function Hero({ onNavigate }: HeroProps) {
                 type="button"
                 key={post.title}
                 onClick={() => onNavigate(post.page)}
-                className="group relative min-h-56 overflow-hidden rounded-2xl border border-border/80 bg-[rgb(var(--card))] p-0 text-left transition-colors hover:border-[rgb(var(--primary))]/70"
+                className="group relative min-h-56 overflow-hidden rounded-2xl border border-border/80 bg-[rgb(var(--card))] p-0 text-left transition-all duration-300 hover:-translate-y-1 hover:border-[rgb(var(--primary))]/55 hover:shadow-[0_22px_60px_rgb(82_95_212/0.13)]"
               >
                 <div
-                  className={`absolute inset-0 bg-[url('/images/featured-card-bg.webp')] bg-cover opacity-72 transition-transform duration-700 group-hover:scale-105 ${post.backgroundClassName}`}
+                  className={`absolute inset-0 bg-[url('/images/featured-card-bg-light.webp')] bg-cover opacity-[0.92] transition-transform duration-700 group-hover:scale-105 ${post.backgroundClassName}`}
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(var(--background)/0.2),rgb(var(--background)/0.78)),radial-gradient(circle_at_20%_0%,rgb(var(--primary)/0.2),transparent_16rem)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(255_255_255/0.18),rgb(255_255_255/0.86)),radial-gradient(circle_at_20%_0%,rgb(var(--primary)/0.16),transparent_16rem)]" />
                 <div className="relative flex min-h-56 flex-col justify-end p-6">
                   <div className="mb-4 text-sm font-semibold text-[rgb(var(--primary))]">
                     {post.label}

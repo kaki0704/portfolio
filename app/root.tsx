@@ -23,7 +23,7 @@ export const links: Route.LinksFunction = () => [
 ];
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -55,7 +55,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
   return (
     <main className="min-h-screen bg-background p-6 pt-24 text-foreground">
-      <div className="mx-auto max-w-3xl rounded-card border border-border/70 bg-card/80 p-8">
+      <div className="surface-panel mx-auto max-w-3xl rounded-card p-8">
         <h1>{message}</h1>
         <p className="mt-4 text-muted-foreground">{details}</p>
         {stack && (

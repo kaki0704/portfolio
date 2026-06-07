@@ -51,7 +51,7 @@ export function ProjectsGrid() {
                       alt={project.title}
                       className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.035]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white/75 via-white/10 to-transparent" />
                     <div className="absolute left-4 top-4 rounded-md border border-border/70 bg-background/70 px-3 py-1 text-xs font-bold text-[rgb(var(--primary))] backdrop-blur">
                       {project.status}
                     </div>

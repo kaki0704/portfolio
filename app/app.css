@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "highlight.js/styles/atom-one-dark.css";
+@import "highlight.js/styles/github.css";
 
 :root {
   --font-sans:
@@ -10,6 +10,6 @@
 
 html,
 body {
-  background-color: rgb(8 9 10);
-  color-scheme: dark;
+  background-color: rgb(247 249 253);
+  color-scheme: light;
 }

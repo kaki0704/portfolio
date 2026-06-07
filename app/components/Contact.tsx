@@ -39,19 +39,19 @@ export function Contact() {
       icon: GithubFillIcon,
       label: "GitHub",
       href: "https://github.com/kaki0704",
-      color: "hover:text-foreground",
+      color: "hover:text-primary",
     },
     {
       icon: LinkedinBoxFillIcon,
       label: "LinkedIn",
       href: "https://linkedin.com",
-      color: "hover:text-blue-400",
+      color: "hover:text-primary",
     },
     {
       icon: FacebookBoxFillIcon,
       label: "Facebook",
       href: "https://www.facebook.com/yuuki.yamada.351",
-      color: "hover:text-blue-400",
+      color: "hover:text-primary",
     },
   ];
   return (
@@ -106,7 +106,7 @@ export function Contact() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 bg-card border border-border rounded-lg text-muted-foreground transition-colors ${social.color}`}
+                      className={`rounded-lg border border-border bg-card p-3 text-muted-foreground transition-colors ${social.color}`}
                     >
                       <IconComponent size={20} />
                     </a>
@@ -115,7 +115,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="bg-card p-6 rounded-card border border-border">
+            <div className="surface-panel rounded-card p-6">
               <h4 className="mb-3">対応可能時間</h4>
               <div className="space-y-2 text-muted-foreground">
                 <p>平日: 10:00 - 18:00 (JST)</p>
@@ -125,7 +125,7 @@ export function Contact() {
             </div>
           </div>
 
-          <div className="bg-card p-8 rounded-card border border-border animate-fadeIn">
+          <div className="surface-panel animate-fadeIn rounded-card p-8">
             <h3 className="mb-6">メッセージを送る</h3>
             <form className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

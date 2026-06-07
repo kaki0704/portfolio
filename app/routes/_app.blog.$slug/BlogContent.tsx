@@ -51,7 +51,7 @@ export function BlogContent() {
             <img
               src={post.eyecatch.url}
               alt={post.title}
-              className="h-auto w-full rounded-card border border-border/70 shadow-[0_28px_90px_rgb(0_0_0/0.35)]"
+              className="h-auto w-full rounded-card border border-border/70 shadow-[0_28px_90px_rgb(82_95_212/0.14)]"
             />
           </div>
         )}

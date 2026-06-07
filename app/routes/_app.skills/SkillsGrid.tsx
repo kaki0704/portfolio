@@ -88,7 +88,7 @@ export function SkillsGrid() {
                   {category.skills.map((skill, skillIndex) => (
                     <div
                       key={skillIndex}
-                      className="animate-fadeIn rounded-lg border border-border/60 bg-background/40 p-4 transition-colors hover:border-[rgb(var(--primary))]/30"
+                      className="animate-fadeIn rounded-lg border border-border/60 bg-card/70 p-4 transition-colors hover:border-[rgb(var(--primary))]/30"
                     >
                       <div className="flex items-center space-x-3">
                         <SkillIcon name={skill.name} size={24} />
@@ -121,7 +121,7 @@ export function SkillsGrid() {
               {softSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className="animate-fadeIn rounded-lg border border-border/60 bg-background/40 p-5"
+                  className="animate-fadeIn rounded-lg border border-border/60 bg-card/70 p-5"
                 >
                   <div>
                     <div className="flex justify-between items-center mb-2">
